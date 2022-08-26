@@ -2,12 +2,13 @@
 
 Sometimes you're writing a dev tool script that your team needs, but you'd like everyone to be very careful when they use it, so you add an extra prompt. 
 
-Sometimes you want them to be REALLY careful when they use it; for these times, there's the Third Factor.  The third factor is designed to eliminate the script user's ability to blindly press Y/Enter and ignore your prompt.
+Sometimes you want them to be REALLY careful when they use it; for these times, there's the Third Factor.  The third factor is designed to eliminate the script user's ability to blindly press Y/Enter and do something dumb.
 
 Suggested use cases:
 * Connecting to the production database
-* Deploying to prod from your local checkout
+* Deploying to prod from your local branch
 * Clearing an S3 bucket
+* Anything to do with git history rewriting
 * Twiddling config files directly in prod
 * When you just can't get that one person (you know who I mean) to stop and think
 
@@ -26,9 +27,10 @@ Just slap it in your shell script before the part you don't want people to do!
 ### *nix shell scripts
 ```bash
 # Do some safe stuff here...
+
 third-factor || exit 1
 
-#NOW DO THE RISKY STUFF
+# NOW DO THE RISKY STUFF
 ```
 
 Don't omit the `exit 1`! Otherwise your script will continue even if the user fails third-factor authentication.
@@ -36,8 +38,10 @@ Don't omit the `exit 1`! Otherwise your script will continue even if the user fa
 ### Windows `.bat` file (No judgement)
 ```
 Rem Do some safe stuff here...
+
 third-factor
 if !errorlevel! neq 0 exit /b !errorlevel!
+
 Rem NOW DO THE RISKY STUFF
 ```
 
@@ -61,5 +65,5 @@ Let's cool off for 10 seconds and think...
 You're still sure?
 Type YES to continue: YES
 --------------------------
-Be careful, and don't say you were'nt warned…
+Be careful, and don't say you weren't warned…
 ```
