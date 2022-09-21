@@ -13,6 +13,7 @@ setup(
     },
     version=version,
     description="Sometimes security is protection from yourself.",
+    long_description_content_type="text/markdown",
     long_description=long_descr,
     author="Steamship",
     author_email="dave@steamship.com",
