@@ -12,9 +12,9 @@ setup(
         "console_scripts": ['thirdfactor = third_factor.third_factor:main']
     },
     version=version,
-    description="Triple-checking your bad decisions.",
+    description="Sometimes security is protection from yourself.",
     long_description=long_descr,
     author="Steamship",
     author_email="dave@steamship.com",
-    url="https://github.com/nludb/third-factor",
+    url="https://github.com/dkolas/third-factor",
 )
