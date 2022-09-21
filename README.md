@@ -17,18 +17,18 @@ The possibilities are as endless as your team's capacity for unintentional destr
 
 Definitely install this in your root python installation since you want it to be available everywhere.
 
-```bash
+```bas
 pip install third-factor
 ```
 
 ## Usage
 Just slap it in your shell script before the part you don't want people to do!
 
-### *nix shell scripts
+### Linux shell scripts
 ```bash
 # Do some safe stuff here...
 
-third-factor || exit 1
+thirdfactor || exit 1
 
 # NOW DO THE RISKY STUFF
 ```
@@ -39,7 +39,7 @@ Don't omit the `exit 1`! Otherwise your script will continue even if the user fa
 ```
 Rem Do some safe stuff here...
 
-third-factor
+thirdfactor
 if !errorlevel! neq 0 exit /b !errorlevel!
 
 Rem NOW DO THE RISKY STUFF
