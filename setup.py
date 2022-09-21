@@ -1,13 +1,13 @@
 from setuptools import setup
 
-version = '0.0.3'
+version = '0.0.4'
 
 with open("README.md", "rb") as f:
     long_descr = f.read().decode("utf-8")
 
 setup(
     name="third_factor",
-    packages=[],
+    packages=['third_factor'],
     entry_points={
         "console_scripts": ['thirdfactor = third_factor.third_factor:main']
     },
